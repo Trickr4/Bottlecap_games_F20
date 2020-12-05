@@ -5,6 +5,11 @@ using UnityEngine;
 public class Enemies : MonoBehaviour
 {
     // Start is called before the first frame update
+    int hp;
+    int dmg;
+    int speed;
+    Sprite image;
+    int range;
     void Start()
     {
         
