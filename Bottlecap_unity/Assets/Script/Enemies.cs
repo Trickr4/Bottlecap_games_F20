@@ -4,20 +4,10 @@ using UnityEngine;
 
 public class Enemies : MonoBehaviour
 {
-    // Start is called before the first frame update
-    int hp;
-    int dmg;
-    int speed;
-    Sprite image;
-    int range;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    protected int hp;
+    protected int dmg;
+    protected int speed;
+    [SerializeField] protected Sprite image;
+    //range is times 100 px
+    protected int range;
 }
