@@ -24,5 +24,4 @@ public class Controller : MonoBehaviour
         transform.Translate(movement * speed * Time.deltaTime);
     }
 
-
 }

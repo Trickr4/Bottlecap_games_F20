@@ -12,9 +12,14 @@ public class Character : MonoBehaviour
     protected float range;
 
     public float getHP(){return hp;}
+    public void setHP(float num){hp += num;}
     public float getDMG(){return dmg;}
+    public void setDMG(float num){dmg += num;}
     public float getSPEED(){return speed;}
-    public Sprite getIMAGE(){return image;}
+    public void setSPEED(float num){speed += num;}
+    /* change the character model... not done
+    public void setIMAGE(){return null;}*/
     public float getRANGE(){return range;}
+    public void setRANGE(float num){range += num;;}
 
 }

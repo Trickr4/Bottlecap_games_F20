@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeEnemy : Enemies
+public class MeleeEnemy : Character
 {
     private GameObject player;
+    private Player playerStats;
     Rigidbody rb;
 
     // Start is called before the first frame update
@@ -16,6 +17,8 @@ public class MeleeEnemy : Enemies
         range = 1;
 
         player = GameObject.FindGameObjectsWithTag("Player")[0];
+        playerStats = player.GetComponent<Player>();
+
         rb = GetComponent<Rigidbody>();
     }
 
@@ -23,10 +26,8 @@ public class MeleeEnemy : Enemies
     void Update()
     {
         Move();
-        if(Vector3.Distance(GetPlayerPos(), transform.position) == range) 
-        {
-            Attack();
-        }
+        Debug.Log(playerStats.getHP());
+
     }
 
     private void Move()
@@ -37,13 +38,23 @@ public class MeleeEnemy : Enemies
 
     private void Attack()
     {
-        //player.transform;
+        if(Vector2.Distance(GetPlayerPos(), transform.position) == 3f)
+        {
+            //player loses hp - dmg
+            playerStats.setHP(-(dmg));
+        }
     }
 
     //AI lock on to player.
     private Vector3 GetPlayerPos()
     {
         return Vector3.Normalize( (player.transform.position) );
+    }
+
+    private void OnTriggerStay(Collider other) {
+        //add an attack cooldown here or put iframes on the player.
+        if(other.CompareTag("Player"))
+            playerStats.setHP(-(dmg));
     }
 
 }

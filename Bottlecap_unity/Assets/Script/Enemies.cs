@@ -2,12 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// This script will be use for object pooling the enemies
 public class Enemies : MonoBehaviour
 {
-    protected int hp;
-    protected int dmg;
-    protected int speed;
-    [SerializeField] protected Sprite image;
-    //range is times 100 px
-    protected int range;
 }

@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : Character
 {
-    // Start is called before the first frame update
+    // Player Stats
     void Start()
     {
-        
+        hp = 100;
+        dmg = 10;
+        range = 1;
     }
 
-    // Update is called once per frame
-    void Update()
+    void Attack()
     {
         
     }
