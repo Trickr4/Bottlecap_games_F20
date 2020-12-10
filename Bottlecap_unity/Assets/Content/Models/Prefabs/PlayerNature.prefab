@@ -172,6 +172,7 @@ GameObject:
   - component: {fileID: 4914550383520292524}
   - component: {fileID: 4914550383520292523}
   - component: {fileID: 7848365536939144519}
+  - component: {fileID: 5304724286177559341}
   m_Layer: 0
   m_Name: PlayerNature
   m_TagString: Untagged
@@ -251,7 +252,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 714e8672b0c9fe6418a5f037fa1494f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: {fileID: 0}
   speed: 7
+  rotationSpeed: 200
 --- !u!114 &7848365536939144519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,6 +268,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 0}
+--- !u!143 &5304724286177559341
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4914550383520292522}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 0
+  m_Radius: 0.1
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8253250483342259648
 GameObject:
   m_ObjectHideFlags: 0
