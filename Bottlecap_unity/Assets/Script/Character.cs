@@ -1,15 +1,18 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    protected float hp;
     protected float dmg;
     protected float speed;
     [SerializeField] protected Sprite image;
     //range is times 100 px
     protected float range;
+
+    public Enums.ELEMENT_TYPES characterElement;
+    public float hp;
 
     public float getHP(){return hp;}
     public void setHP(float num){hp += num;}
@@ -22,4 +25,14 @@ public class Character : MonoBehaviour
     public float getRANGE(){return range;}
     public void setRANGE(float num){range += num;;}
 
+    private void Update()
+    {
+        if (gameObject.CompareTag("Enemy"))
+        {
+            if (hp <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
 }

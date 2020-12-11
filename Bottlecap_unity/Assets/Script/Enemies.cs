@@ -5,4 +5,5 @@ using UnityEngine;
 // This script will be use for object pooling the enemies
 public class Enemies : MonoBehaviour
 {
+    
 }
