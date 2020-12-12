@@ -75,5 +75,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 0}
-  characterElement: 0
+  characterElement: 2
   hp: 200

@@ -300,7 +300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 0}
-  characterElement: 0
+  characterElement: 1
   hp: 200
 --- !u!1 &5504773565813713602
 GameObject:
