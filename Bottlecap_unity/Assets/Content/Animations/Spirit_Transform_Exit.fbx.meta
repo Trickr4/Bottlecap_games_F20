@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 96028e4aee438074a86b6ad423d69ccf
+guid: 25584d9323d48ff40b3d07eb36933dae
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable:
   - first:
       74: 1827226128182048838
-    second: TransformExit
+    second: ExitTransform
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -35,10 +35,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: TransformExit
+      name: ExitTransform
       takeName: Take 001
       internalID: 0
-      firstFrame: 15
+      firstFrame: 1
       lastFrame: 24
       wrapMode: 0
       orientationOffsetY: 0
