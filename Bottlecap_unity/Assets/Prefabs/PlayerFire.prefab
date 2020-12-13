@@ -373,7 +373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51c0f7b8612f2bb46970bfffd9da6fd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 5415786808696679899, guid: 84f3d6e050b41b9439fc8489d40ef7b8,
+  projectile: {fileID: 2552701233692823665, guid: 9e7c64aa91f101545acd717fd0c54f45,
     type: 3}
 --- !u!82 &7454989426031371828
 AudioSource:
