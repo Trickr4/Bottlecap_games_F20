@@ -7,6 +7,7 @@ public class MeleeEnemy : Character
     private GameObject player;
     private Player playerStats;
     Rigidbody rb;
+    private bool inRange = false;
 
     // Start is called before the first frame update
     void Start()
@@ -25,9 +26,8 @@ public class MeleeEnemy : Character
     // Update is called once per frame
     void Update()
     {
-        Move();
-        Debug.Log(playerStats.getHP());
-
+        if(!inRange)
+            Move();
     }
 
     private void Move()
@@ -53,8 +53,19 @@ public class MeleeEnemy : Character
 
     private void OnTriggerStay(Collider other) {
         //add an attack cooldown here or put iframes on the player.
+        
         if(other.CompareTag("Player"))
-            playerStats.setHP(-(dmg));
+        {
+            inRange = true;
+            playerStats.setHP(playerStats.getHP()-dmg);
+            Debug.Log(other);
+            Debug.Log(playerStats.getHP());
+            rb.velocity = new Vector3(0, 0, 0);
+        }
+    }
+
+    private void OnTriggerExit(Collider other) {
+        inRange = false;
     }
 
 }

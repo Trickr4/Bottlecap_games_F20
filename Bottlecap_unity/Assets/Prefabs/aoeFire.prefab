@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4294045822017765224}
+  - component: {fileID: 6183117861350962741}
   m_Layer: 0
   m_Name: aoeFire
   m_TagString: Untagged
@@ -24,13 +25,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 994409536511577467}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.14, y: 2.3883812, z: 7.32}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
   - {fileID: 4091590402607158178}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6183117861350962741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994409536511577467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be7f3d2876565d8419046062e4d76bcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showSpell: {fileID: 847696816022453750}
+  showAni: {fileID: 2310719114848091536}
+  spellcaster: {fileID: 0}
 --- !u!1 &2987846139430482356
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,6 +189,8 @@ GameObject:
   - component: {fileID: 1254149900597981205}
   - component: {fileID: 3250214923503786930}
   - component: {fileID: 847696816022453750}
+  - component: {fileID: 5990137310913155758}
+  - component: {fileID: 2414300868969485571}
   m_Layer: 0
   m_Name: aoeFire2
   m_TagString: Untagged
@@ -241,3 +259,29 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &5990137310913155758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8523180705120839558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0c0ab04124e85f4b9792ce0449684bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellcaster: {fileID: 0}
+--- !u!65 &2414300868969485571
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8523180705120839558}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.17760006, y: 0.52938235, z: 0.17638521}
+  m_Center: {x: 1.374288e-24, y: -0.18986891, z: 2.0694811e-24}

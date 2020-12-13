@@ -15,15 +15,15 @@ public class Character : MonoBehaviour
     public float hp;
 
     public float getHP(){return hp;}
-    public void setHP(float num){hp += num;}
+    public void setHP(float num){hp = num;}
     public float getDMG(){return dmg;}
-    public void setDMG(float num){dmg += num;}
+    public void setDMG(float num){dmg = num;}
     public float getSPEED(){return speed;}
-    public void setSPEED(float num){speed += num;}
+    public void setSPEED(float num){speed = num;}
     /* change the character model... not done
     public void setIMAGE(){return null;}*/
     public float getRANGE(){return range;}
-    public void setRANGE(float num){range += num;;}
+    public void setRANGE(float num){range = num;;}
 
     private void Update()
     {
