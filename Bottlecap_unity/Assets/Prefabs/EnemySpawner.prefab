@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1484651234168922094
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1484651234168922095}
+  - component: {fileID: 1484651234168922092}
+  m_Layer: 0
+  m_Name: EnemySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1484651234168922095
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484651234168922094}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.888516, y: 1, z: 8.013511}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1484651234168922092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484651234168922094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d847544278bce140ac8e76ce0cfef54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnRadius: 0
+  enemies:
+  - {fileID: 6653723571917516187, guid: 1d2d16c70f230f9419bbfc22911fe0d6, type: 3}
+  - {fileID: 4869320937325593851, guid: 12e998d7606149241879c88dde0c8316, type: 3}
+  - {fileID: 2887957304205661305, guid: f7bdeacf999666948823f6db4d12cd08, type: 3}
+  spawnRandomEnemy: 0
+  enemiesToSpawn: 0
+  spawnRandomTime: 0
+  spawnFrequencySeconds: 1
+  spawnFrequencyVarianceSeconds: 0.5
