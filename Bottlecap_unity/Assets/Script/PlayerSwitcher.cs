@@ -11,13 +11,13 @@ public class PlayerSwitcher : MonoBehaviour
     
     private GameObject _currentGameObject;
     private Player _currentPlayer;
-    // private Animator _animator;
+    private Animator _animator;
     
     void Start()
     {
         _currentGameObject = GameObject.FindWithTag("Player");
         _currentPlayer = _currentGameObject.GetComponent<Player>();
-        // _animator = GetComponent<Animator>();
+        _animator = _currentGameObject.transform.Find("Parts").GetComponent<Animator>();
 
     }
 
@@ -44,7 +44,7 @@ public class PlayerSwitcher : MonoBehaviour
     {
         if (_currentPlayer.characterElement != keyElement)
         {
-            // _animator.Play("EnterTransform", 0, 0f);
+            _animator.Play("EnterTransform", 0, 0f);
 
             Vector3 oldObjectVector3 = _currentGameObject.transform.position;
             Quaternion oldObjectQuaternion = _currentGameObject.transform.rotation;
@@ -52,6 +52,9 @@ public class PlayerSwitcher : MonoBehaviour
 
             _currentGameObject = Instantiate(SelectPrefab(keyElement), oldObjectVector3, oldObjectQuaternion);
             _currentPlayer = _currentGameObject.GetComponent<Player>();
+            _animator = _currentGameObject.transform.Find("Parts").GetComponent<Animator>();
+            _animator.Play("ExitTransform", 0, 0f);
+
             
             // Have the camera follow the new object.
             GameObject cmGameObject = GameObject.FindWithTag("CMCamera");
