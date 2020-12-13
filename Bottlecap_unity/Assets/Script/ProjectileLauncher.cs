@@ -11,7 +11,7 @@ public class ProjectileLauncher : MonoBehaviour
 
     private void Start()
     {
-        animator = GameObject.Find("Parts").GetComponent<Animator>();
+        animator = gameObject.transform.parent.transform.Find("Parts").GetComponent<Animator>();
         audioSource = gameObject.GetComponent<AudioSource>();
     }
     void Update()

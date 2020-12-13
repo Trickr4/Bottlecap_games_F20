@@ -9553,6 +9553,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6345da4eaa49e7e448bcddf87d6cd992, type: 3}
+--- !u!1001 &1052813127
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5157427307955792404, guid: c1193bccd92b82a4d83c7be0c3091c35,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.273878
+      objectReference: {fileID: 0}
+    - target: {fileID: 5157427307955792404, guid: c1193bccd92b82a4d83c7be0c3091c35,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.5416222
+      objectReference: {fileID: 0}
+    - target: {fileID: 5157427307955792404, guid: c1193bccd92b82a4d83c7be0c3091c35,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.5880318
+      objectReference: {fileID: 0}
+    - target: {fileID: 5157427307955792404, guid: c1193bccd92b82a4d83c7be0c3091c35,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5157427307955792404, guid: c1193bccd92b82a4d83c7be0c3091c35,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5157427307955792404, guid: c1193bccd92b82a4d83c7be0c3091c35,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5157427307955792404, guid: c1193bccd92b82a4d83c7be0c3091c35,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5157427307955792404, guid: c1193bccd92b82a4d83c7be0c3091c35,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5157427307955792404, guid: c1193bccd92b82a4d83c7be0c3091c35,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5157427307955792404, guid: c1193bccd92b82a4d83c7be0c3091c35,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5157427307955792404, guid: c1193bccd92b82a4d83c7be0c3091c35,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5157427307955792406, guid: c1193bccd92b82a4d83c7be0c3091c35,
+        type: 3}
+      propertyPath: m_Name
+      value: PlayerSwitcher
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c1193bccd92b82a4d83c7be0c3091c35, type: 3}
 --- !u!4 &1055720504 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7448961924855320674, guid: 21b7dd4d4b7620142981102894bf4d0f,
@@ -16893,7 +16962,7 @@ GameObject:
   - component: {fileID: 1934517463}
   m_Layer: 0
   m_Name: CM vcam1
-  m_TagString: Untagged
+  m_TagString: CMCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
