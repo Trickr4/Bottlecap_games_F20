@@ -6,11 +6,13 @@ public class ProjectileLauncher : MonoBehaviour
 {
     public GameObject projectile;
 
+    private AudioSource audioSource;
     private Animator animator;
 
     private void Start()
     {
         animator = GameObject.Find("Parts").GetComponent<Animator>();
+        audioSource = gameObject.GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -19,6 +21,7 @@ public class ProjectileLauncher : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            audioSource.Play();
             animator.Play("Attack", 0, 0f);
             GameObject spawnedGameObject = Instantiate(projectile, currentTransform.position,
                     currentTransform.rotation);
