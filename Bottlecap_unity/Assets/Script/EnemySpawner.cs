@@ -89,8 +89,10 @@ public class EnemySpawner : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        #if UNITY_EDITOR
         Handles.color = Color.red;
         Handles.DrawWireDisc(transform.position, Vector3.down, spawnRadius);
+        #endif
     }
 
     private Vector3 GetRandomSpawnLocation()

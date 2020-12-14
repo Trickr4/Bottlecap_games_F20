@@ -39,13 +39,18 @@ public class Character : MonoBehaviour
     {
         if (hp <= 0)
         {
-            audioSource.Play();
-            Destroy(gameObject);
+            if (gameObject.CompareTag("Enemy"))
+            {
+                audioSource.Play();
+
+            }
             
             if (gameObject.CompareTag("Player"))
             {
                 ShowDeathScreen();
             }
+            
+            Destroy(gameObject);
         }
     }
 
