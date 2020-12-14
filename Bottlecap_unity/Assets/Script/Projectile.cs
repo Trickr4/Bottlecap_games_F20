@@ -35,7 +35,6 @@ public class Projectile : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             _audioSource.Play();
-            Character player = other.gameObject.GetComponent<Character>();
             Character enemyCharacter = other.gameObject.GetComponent<Character>();
             float currentMultiplier = 1f;
             
