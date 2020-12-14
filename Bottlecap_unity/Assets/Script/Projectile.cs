@@ -42,9 +42,7 @@ public class Projectile : MonoBehaviour
             if (characterElement == playerStats.characterElement)
             {
                 playerStats.setHP(playerStats.getHP()-baseDamage);
-                // player.score += player.baseScore;
             }
-            // TODO: Implement the damage multipliers.
             else
             {
                 switch(characterElement)
@@ -93,9 +91,7 @@ public class Projectile : MonoBehaviour
             if (characterElement == enemyCharacter.characterElement)
             {
                 enemyCharacter.hp -= baseDamage;
-                // player.score += player.baseScore;
             }
-            // TODO: Implement the damage multipliers.
             else
             {
                 switch(characterElement)
