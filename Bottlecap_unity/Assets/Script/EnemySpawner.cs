@@ -46,7 +46,6 @@ public class EnemySpawner : MonoBehaviour
     {
         while (true)
         {
-            Debug.Log("Spawned");
             if (spawnRandomEnemy)
             {
                 GameObject toSpawn = enemies[_random.Next(enemies.Count)];

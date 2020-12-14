@@ -58,8 +58,6 @@ public class MeleeEnemy : Character
         {
             inRange = true;
             playerStats.setHP(playerStats.getHP()-dmg);
-            Debug.Log(other);
-            Debug.Log(playerStats.getHP());
             rb.velocity = new Vector3(0, 0, 0);
         }
     }
