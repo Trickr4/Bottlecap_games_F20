@@ -25,12 +25,19 @@ public class Character : MonoBehaviour
     public float getRANGE(){return range;}
     public void setRANGE(float num){range = num;;}
 
+    private AudioSource audioSource;
+    private void Start()
+    {
+        audioSource = GameObject.Find("Audio Effects").transform.Find("EnemyDeath").GetComponent<AudioSource>();
+    }
+
     private void Update()
     {
         if (gameObject.CompareTag("Enemy"))
         {
             if (hp <= 0)
             {
+                audioSource.Play();
                 Destroy(gameObject);
             }
         }
