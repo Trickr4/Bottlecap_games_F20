@@ -9350,6 +9350,11 @@ PrefabInstance:
       propertyPath: increaseRate
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1484651234168922092, guid: fdef5c553613ef24d99fa55388a0b418,
+        type: 3}
+      propertyPath: increaseRateStarting
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1484651234168922094, guid: fdef5c553613ef24d99fa55388a0b418,
         type: 3}
       propertyPath: m_Name
