@@ -16,6 +16,8 @@ public class RangeEnemy : Character
     private float moving = 2;
     [SerializeField] float moveTime = 2;
 
+    private Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,7 @@ public class RangeEnemy : Character
         playerStats = player.GetComponent<Player>();
 
         rb = GetComponent<Rigidbody>();
+        animator = gameObject.transform.Find("Parts").GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -67,6 +70,7 @@ public class RangeEnemy : Character
 
     void Fire()
     {
+        animator.Play("Attack");
         transform.LookAt(player.transform.position);
         GameObject spawnedGameObject = Instantiate(projectile, transform.position, transform.rotation * Quaternion.Euler(90, 0, 0));
         Projectile spawnedProjectile = spawnedGameObject.GetComponent<Projectile>();

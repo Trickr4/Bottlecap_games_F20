@@ -11,6 +11,7 @@ public class MeleeEnemy : Character
     [SerializeField] protected float cooldown = 3f;
     private float atkspeed;
 
+    private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,7 @@ public class MeleeEnemy : Character
         playerStats = player.GetComponent<Player>();
 
         rb = GetComponent<Rigidbody>();
+        animator = gameObject.transform.Find("Parts").GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -63,6 +65,7 @@ public class MeleeEnemy : Character
         
         if(other.CompareTag("Player"))
         {
+            animator.Play("Attack");
             inRange = true;
             if(atkspeed < 0)
             {
