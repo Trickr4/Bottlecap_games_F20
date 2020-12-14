@@ -16,6 +16,7 @@ public class Projectile : MonoBehaviour
     public float waterDamageMultiplier;
 
     private Rigidbody _rigidbody;
+    private AudioSource _audioSource;
 
     private void Awake()
     {
@@ -26,12 +27,15 @@ public class Projectile : MonoBehaviour
     {
         _rigidbody.AddForce(_rigidbody.transform.up * projectileSpeed);
         Destroy(gameObject, projectileLifeSeconds);
+        _audioSource = GameObject.Find("Audio Effects").transform.Find("EnemyDamage").GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
+            _audioSource.Play();
+            Character player = other.gameObject.GetComponent<Character>();
             Character enemyCharacter = other.gameObject.GetComponent<Character>();
             float currentMultiplier = 1f;
             

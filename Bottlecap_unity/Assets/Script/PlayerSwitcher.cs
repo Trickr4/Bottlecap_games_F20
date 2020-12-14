@@ -12,13 +12,13 @@ public class PlayerSwitcher : MonoBehaviour
     private GameObject _currentGameObject;
     private Player _currentPlayer;
     private Animator _animator;
-
+    private AudioSource _audioSource;
     void Start()
     {
         _currentGameObject = GameObject.FindWithTag("Player");
         _currentPlayer = _currentGameObject.GetComponent<Player>();
         _animator = _currentGameObject.transform.Find("Parts").GetComponent<Animator>();
-        
+        _audioSource = gameObject.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -46,6 +46,7 @@ public class PlayerSwitcher : MonoBehaviour
     {
         if (_currentPlayer.characterElement != keyElement)
         {
+            _audioSource.Play();
             _animator.Play("EnterTransform", 0, 0f);
 
             Vector3 oldObjectVector3 = _currentGameObject.transform.position;
