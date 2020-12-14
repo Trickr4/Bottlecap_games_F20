@@ -18,6 +18,10 @@ public class EnemySpawner : MonoBehaviour
     public bool spawnRandomTime;
     public float spawnFrequencySeconds;
     public float spawnFrequencyVarianceSeconds; // Used if spawnRandomTime is true.
+    public bool increaseRate;
+    public float increaseRateDivisor = 1.1f;
+    public float increaseRateStarting = 3f;
+    public float increaseRateFloor = 0.1f;
 
     private GameObject _enemyToSpawn;
     private Vector3 _currentPosition;
@@ -75,8 +79,13 @@ public class EnemySpawner : MonoBehaviour
             }
 
             float waitTime = spawnFrequencySeconds;
-        
-            if (spawnRandomTime)
+
+            if (increaseRate)
+            {
+                increaseRateStarting /= increaseRateDivisor;
+                waitTime = Mathf.Max(increaseRateStarting, increaseRateFloor);
+            }
+            else if (spawnRandomTime)
             {
                 // If the seconds < 0 there is some undefined behavior (spawns more than 1 suddenly).
                 waitTime = UnityEngine.Random.Range(Mathf.Max(waitTime - spawnFrequencyVarianceSeconds, 0),

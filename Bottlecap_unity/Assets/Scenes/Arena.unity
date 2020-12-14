@@ -9328,12 +9328,12 @@ PrefabInstance:
     - target: {fileID: 1484651234168922092, guid: fdef5c553613ef24d99fa55388a0b418,
         type: 3}
       propertyPath: spawnRandomEnemy
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1484651234168922092, guid: fdef5c553613ef24d99fa55388a0b418,
         type: 3}
       propertyPath: spawnRandomTime
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1484651234168922092, guid: fdef5c553613ef24d99fa55388a0b418,
         type: 3}
@@ -9347,8 +9347,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1484651234168922092, guid: fdef5c553613ef24d99fa55388a0b418,
         type: 3}
-      propertyPath: enemiesToSpawn
-      value: 2
+      propertyPath: increaseRate
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1484651234168922094, guid: fdef5c553613ef24d99fa55388a0b418,
         type: 3}
