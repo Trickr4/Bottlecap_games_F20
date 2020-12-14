@@ -18,9 +18,8 @@ public class HealthBar : MonoBehaviour
 
     void Update()
     {
-        // Rotate the canvas to face the player.
-        // Not fully working.
-        // healthBar.transform.LookAt(Camera.main.transform);
+        // Rotate the health bar canvas to face the player.
+        transform.transform.LookAt(Camera.main.transform.position);
         
         // Set the health amount.
         healthBar.fillAmount = _enemy.hp / _maxHealth;
