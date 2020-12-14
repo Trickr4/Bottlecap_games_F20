@@ -370,18 +370,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 73715815}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd14324e95724fe4985cc3c95836dab5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
   characterElement: 0
   hp: 100
+  score: 0
+  baseScore: 10
+  speed: 0
+  image: {fileID: 0}
   spell: {fileID: 994409536511577467, guid: 4e7ad8eb162617b41bda0c564d89dece, type: 3}
   cooldown: 200
   castDelay: 3
   castDuration: 2
+  moveTime: 2
 --- !u!135 &73715822
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -407,9 +411,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e0bd07a2d291b943af41d28466da46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
   characterElement: 0
   hp: 100
+  score: 0
+  baseScore: 10
+  speed: 0
+  image: {fileID: 0}
+  cooldown: 3
 --- !u!65 &73715824
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -430,17 +438,21 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 73715815}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 165c4cac65f0bb448a0620f93715a742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
   characterElement: 0
   hp: 0
+  score: 0
+  baseScore: 10
+  speed: 0
+  image: {fileID: 0}
   cooldown: 0
   projectile: {fileID: 5415786808696679899, guid: 84f3d6e050b41b9439fc8489d40ef7b8,
     type: 3}
+  moveTime: 0
 --- !u!1 &115647329
 GameObject:
   m_ObjectHideFlags: 0

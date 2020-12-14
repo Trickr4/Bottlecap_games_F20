@@ -13,6 +13,8 @@ public class SpellcasterEnemy : Character
 
     public float castDelay;
     public float castDuration;
+    private float moving = 2;
+    [SerializeField] float moveTime = 2;
 
     // Start is called before the first frame update
     void Start()
@@ -21,10 +23,10 @@ public class SpellcasterEnemy : Character
         dmg = 5;
         speed = 3;
         range = 1;
-
+        moving = moveTime;
         cooldown = 10;
         spellcd = cooldown;
-
+        RandDir(Random.Range(-179.0f, 179.0f));
         player = GameObject.FindGameObjectsWithTag("Player")[0];
         playerStats = player.GetComponent<Player>();
 
@@ -35,6 +37,7 @@ public class SpellcasterEnemy : Character
     void Update()
     {
         float time = Time.deltaTime;
+        Move();
         if(spellcd <= 0)
         {
             castSpell();
@@ -44,6 +47,22 @@ public class SpellcasterEnemy : Character
         {
             spellcd -= time;
         }
+        if(moveTime<0)
+        {
+            RandDir(Random.Range(-179.0f, 179.0f));
+            moveTime = moving;
+        }
+        moveTime -= time;
+    }
+
+    private void Move()
+    {
+        transform.position += transform.forward * 3.0f * Time.deltaTime;
+    }
+
+    private void RandDir(float dir)
+    {
+        transform.rotation = Quaternion.Euler(0,dir,0);
     }
 
     private Vector3 GetPlayerPos()

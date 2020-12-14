@@ -13,17 +13,20 @@ public class RangeEnemy : Character
 
     public GameObject projectile;
 
+    private float moving = 2;
+    [SerializeField] float moveTime = 2;
+
     // Start is called before the first frame update
     void Start()
     {
         hp = 100;
         dmg = 5;
-        speed = 3;
+        speed = 3f;
         range = 1;
-
+        moving = moveTime;
         cooldown = 2;
         reload = cooldown;
-
+        RandDir(Random.Range(-179.0f, 179.0f));
         player = GameObject.FindGameObjectsWithTag("Player")[0];
         playerStats = player.GetComponent<Player>();
 
@@ -33,6 +36,7 @@ public class RangeEnemy : Character
     // Update is called once per frame
     void Update()
     {
+        Move();
         float time = Time.deltaTime;
         if(reload <= 0)
         {
@@ -43,7 +47,24 @@ public class RangeEnemy : Character
         {
             reload -= time;
         }
+        if(moveTime<0)
+        {
+            RandDir(Random.Range(-179.0f, 179.0f));
+            moveTime = moving;
+        }
+        moveTime -= time;
+
     }
+    private void Move()
+    {
+        transform.position += transform.forward * 3.0f * Time.deltaTime;
+    }
+
+    private void RandDir(float dir)
+    {
+        transform.rotation = Quaternion.Euler(0,dir,0);
+    }
+
     void Fire()
     {
         transform.LookAt(player.transform.position);
