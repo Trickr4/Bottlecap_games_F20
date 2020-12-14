@@ -8,6 +8,8 @@ public class MeleeEnemy : Character
     private Player playerStats;
     Rigidbody rb;
     private bool inRange = false;
+    [SerializeField] protected float cooldown = 3f;
+    private float atkspeed;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +19,8 @@ public class MeleeEnemy : Character
         speed = 3;
         range = 1;
 
+        atkspeed = cooldown;
+        
         player = GameObject.FindGameObjectsWithTag("Player")[0];
         playerStats = player.GetComponent<Player>();
 
@@ -26,8 +30,11 @@ public class MeleeEnemy : Character
     // Update is called once per frame
     void Update()
     {
+        float time = Time.deltaTime;
         if(!inRange)
             Move();
+        if(atkspeed > 0)
+            atkspeed -= time;
     }
 
     private void Move()
@@ -57,7 +64,11 @@ public class MeleeEnemy : Character
         if(other.CompareTag("Player"))
         {
             inRange = true;
-            playerStats.setHP(playerStats.getHP()-dmg);
+            if(atkspeed < 0)
+            {
+                playerStats.setHP(playerStats.getHP()-dmg);
+                atkspeed = cooldown;
+            }
             rb.velocity = new Vector3(0, 0, 0);
         }
     }
