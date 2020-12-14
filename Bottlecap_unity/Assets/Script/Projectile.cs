@@ -11,9 +11,8 @@ public class Projectile : MonoBehaviour
     public float projectileSpeed;
     public float projectileLifeSeconds;
     public float baseDamage;
-    public float fireDamageMultiplier;
-    public float natureDamageMultiplier;
-    public float waterDamageMultiplier;
+    public float strongDamageMultiplier = 2f;
+    public float weakDamageMultiplier = 0.5f;
 
     private Rigidbody _rigidbody;
     private AudioSource _audioSource;
@@ -32,7 +31,59 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        
+        if(gameObject.tag == "Enemy" && other.tag == "Player")
+        {
+            
+            GameObject player = GameObject.FindGameObjectsWithTag("Player")[0];
+            Player playerStats = player.GetComponent<Player>();
+            
+            // If the same elements then only do base damage.
+            if (characterElement == playerStats.characterElement)
+            {
+                playerStats.setHP(playerStats.getHP()-baseDamage);
+                // player.score += player.baseScore;
+            }
+            // TODO: Implement the damage multipliers.
+            else
+            {
+                switch(characterElement)
+                {
+                    case Enums.ELEMENT_TYPES.Fire:
+                        if(playerStats.characterElement == Enums.ELEMENT_TYPES.Water)
+                        {
+                            playerStats.setHP(playerStats.getHP()-(baseDamage* weakDamageMultiplier));
+                        }
+                        else
+                        {
+                             playerStats.setHP(playerStats.getHP()-(baseDamage* strongDamageMultiplier));
+                        }
+                        break;
+                    case Enums.ELEMENT_TYPES.Water:
+                        if(playerStats.characterElement == Enums.ELEMENT_TYPES.Nature)
+                        {
+                            playerStats.setHP(playerStats.getHP()-(baseDamage* weakDamageMultiplier));
+                        }
+                        else
+                        {
+                             playerStats.setHP(playerStats.getHP()-(baseDamage* strongDamageMultiplier));
+                        }
+                        break;
+                    case Enums.ELEMENT_TYPES.Nature:
+                        if(playerStats.characterElement == Enums.ELEMENT_TYPES.Fire)
+                        {
+                            playerStats.setHP(playerStats.getHP()-(baseDamage* weakDamageMultiplier));
+                        }
+                        else
+                        {
+                             playerStats.setHP(playerStats.getHP()-(baseDamage* strongDamageMultiplier));
+                        }
+                        break;
+                }
+            }
+            Destroy(gameObject);
+        }
+        else if (other.gameObject.CompareTag("Enemy") && gameObject.tag == "Projectile")
         {
             _audioSource.Play();
             Character enemyCharacter = other.gameObject.GetComponent<Character>();
@@ -47,8 +98,39 @@ public class Projectile : MonoBehaviour
             // TODO: Implement the damage multipliers.
             else
             {
-                enemyCharacter.hp -= baseDamage * fireDamageMultiplier;
-                currentMultiplier = fireDamageMultiplier;
+                switch(characterElement)
+                {
+                    case Enums.ELEMENT_TYPES.Fire:
+                        if(enemyCharacter.characterElement == Enums.ELEMENT_TYPES.Water)
+                        {
+                            enemyCharacter.hp -= (baseDamage* weakDamageMultiplier);
+                        }
+                        else
+                        {
+                            enemyCharacter.hp -= (baseDamage* strongDamageMultiplier);
+                        }
+                        break;
+                    case Enums.ELEMENT_TYPES.Water:
+                        if(enemyCharacter.characterElement == Enums.ELEMENT_TYPES.Nature)
+                        {
+                            enemyCharacter.hp -= (baseDamage* weakDamageMultiplier);
+                        }
+                        else
+                        {
+                            enemyCharacter.hp -= (baseDamage* strongDamageMultiplier);
+                        }
+                        break;
+                    case Enums.ELEMENT_TYPES.Nature:
+                        if(enemyCharacter.characterElement == Enums.ELEMENT_TYPES.Fire)
+                        {
+                            enemyCharacter.hp -= (baseDamage* weakDamageMultiplier);
+                        }
+                        else
+                        {
+                            enemyCharacter.hp -= (baseDamage* strongDamageMultiplier);
+                        }
+                        break;
+                }
             }
             
             Destroy(gameObject);

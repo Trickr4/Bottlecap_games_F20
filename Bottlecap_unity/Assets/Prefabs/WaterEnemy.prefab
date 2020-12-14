@@ -344,6 +344,7 @@ GameObject:
   - component: {fileID: 1512923607690108422}
   - component: {fileID: 4023817404751934354}
   - component: {fileID: 2898084017198702816}
+  - component: {fileID: -4676270736073317939}
   m_Layer: 0
   m_Name: WaterEnemy
   m_TagString: Enemy
@@ -412,7 +413,29 @@ MonoBehaviour:
   hp: 200
   score: 0
   baseScore: 10
+  speed: 0
   image: {fileID: 0}
+--- !u!114 &-4676270736073317939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2887957304205661305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 165c4cac65f0bb448a0620f93715a742, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterElement: 0
+  hp: 0
+  score: 0
+  baseScore: 10
+  speed: 0
+  image: {fileID: 0}
+  cooldown: 0
+  projectile: {fileID: 1508634436813121037, guid: 79baca4e78963974da78ff0c4795cd15,
+    type: 3}
 --- !u!1 &6420189653727745536
 GameObject:
   m_ObjectHideFlags: 0

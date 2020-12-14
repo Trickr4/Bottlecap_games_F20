@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 5206449346588612219}
   - component: {fileID: 3827044332075723713}
   - component: {fileID: 7041967624886125372}
+  - component: {fileID: -8159726754901269117}
   m_Layer: 0
   m_Name: NatureEnemy
   m_TagString: Enemy
@@ -159,6 +160,25 @@ MonoBehaviour:
   hp: 200
   score: 0
   baseScore: 10
+  speed: 1.5
+  image: {fileID: 0}
+--- !u!114 &-8159726754901269117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4869320937325593851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e0bd07a2d291b943af41d28466da46e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterElement: 0
+  hp: 0
+  score: 0
+  baseScore: 10
+  speed: 0
   image: {fileID: 0}
 --- !u!1 &6239535119276922749
 GameObject:

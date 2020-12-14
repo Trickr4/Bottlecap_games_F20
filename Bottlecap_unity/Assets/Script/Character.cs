@@ -13,7 +13,7 @@ public class Character : MonoBehaviour
     public int baseScore = 10; // Will use the damage multipliers to increase the score.
 
     protected float dmg;
-    protected float speed;
+    [SerializeField] protected float speed;
     [SerializeField] protected Sprite image;
     //range is times 100 px
     protected float range;
