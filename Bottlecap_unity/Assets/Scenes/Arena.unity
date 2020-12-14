@@ -9328,7 +9328,7 @@ PrefabInstance:
     - target: {fileID: 1484651234168922092, guid: fdef5c553613ef24d99fa55388a0b418,
         type: 3}
       propertyPath: spawnRandomEnemy
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1484651234168922092, guid: fdef5c553613ef24d99fa55388a0b418,
         type: 3}
@@ -9344,6 +9344,11 @@ PrefabInstance:
         type: 3}
       propertyPath: spawnRadius
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1484651234168922092, guid: fdef5c553613ef24d99fa55388a0b418,
+        type: 3}
+      propertyPath: enemiesToSpawn
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1484651234168922094, guid: fdef5c553613ef24d99fa55388a0b418,
         type: 3}
