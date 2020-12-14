@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class Character : MonoBehaviour
 {
@@ -36,13 +37,24 @@ public class Character : MonoBehaviour
 
     private void Update()
     {
-        if (gameObject.CompareTag("Enemy"))
+        if (hp <= 0)
         {
-            if (hp <= 0)
+            audioSource.Play();
+            Destroy(gameObject);
+            
+            if (gameObject.CompareTag("Player"))
             {
-                audioSource.Play();
-                Destroy(gameObject);
+                ShowDeathScreen();
             }
         }
+    }
+
+    private void ShowDeathScreen()
+    {
+        // Hide the player HUD.
+        GameObject.FindWithTag("PlayerHUD").SetActive(false);
+        
+        // Show the death screen.
+        GameObject.FindWithTag("DeathScreen").SetActive(true);
     }
 }

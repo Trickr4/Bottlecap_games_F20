@@ -38,8 +38,6 @@ public class PlayerSwitcher : MonoBehaviour
         {
             SwitchPlayer(Enums.ELEMENT_TYPES.Nature);
         }
-        
-        Debug.Log(_currentGameObject.GetComponent<Player>().hp);
     }
 
     void SwitchPlayer(Enums.ELEMENT_TYPES keyElement)

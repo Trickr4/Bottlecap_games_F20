@@ -4,6 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = System.Random;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 public class EnemySpawner : MonoBehaviour
 {
     // Default to spawning on intself.
@@ -46,7 +50,6 @@ public class EnemySpawner : MonoBehaviour
     {
         while (true)
         {
-            Debug.Log("Spawned");
             if (spawnRandomEnemy)
             {
                 GameObject toSpawn = enemies[_random.Next(enemies.Count)];
@@ -86,8 +89,8 @@ public class EnemySpawner : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        UnityEditor.Handles.color = Color.red;
-        UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.down, spawnRadius);
+        Handles.color = Color.red;
+        Handles.DrawWireDisc(transform.position, Vector3.down, spawnRadius);
     }
 
     private Vector3 GetRandomSpawnLocation()
