@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
     // Start the game, go to the game scene
     public void PlayGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("Arena");
     }
 
     // Quit the Game

@@ -10,6 +10,8 @@ TagManager:
   - HealthUI
   - ScoreUI
   - PlayerUIManager
+  - PlayerHUD
+  - DeathScreen
   layers:
   - Default
   - TransparentFX

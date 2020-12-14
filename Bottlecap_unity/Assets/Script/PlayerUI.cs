@@ -11,9 +11,13 @@ public class PlayerUI : MonoBehaviour
     private Text _healthText;
     private Text _scoreText;
     private float _originalPlayerHealth;
-    
+    private GameObject _deathScreen;
+
     void Start()
     {
+        _deathScreen = GameObject.FindWithTag("DeathScreen");
+        _deathScreen.SetActive(false);
+        
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
 
         _healthText = GameObject.FindWithTag("HealthUI").GetComponent<Text>();
@@ -27,5 +31,10 @@ public class PlayerUI : MonoBehaviour
         _healthText.text = $"Health: {Mathf.RoundToInt(player.hp)}";
         _scoreText.text = $"Score: {player.score:000000}";
         _healthText.color = Color.Lerp(Color.green, Color.red, (_originalPlayerHealth - player.hp) / 100);
+    }
+
+    public void SetDeathScreenActive()
+    {
+        _deathScreen.SetActive(true);
     }
 }

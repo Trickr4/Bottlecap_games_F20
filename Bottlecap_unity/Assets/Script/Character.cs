@@ -60,6 +60,6 @@ public class Character : MonoBehaviour
         GameObject.FindWithTag("PlayerHUD").SetActive(false);
         
         // Show the death screen.
-        GameObject.FindWithTag("DeathScreen").SetActive(true);
+        GameObject.FindWithTag("PlayerUIManager").GetComponent<PlayerUI>().SetDeathScreenActive();
     }
 }
