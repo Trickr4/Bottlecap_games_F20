@@ -32,20 +32,30 @@ public class Projectile : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            Character player = other.gameObject.GetComponent<Character>();
+            Character enemyCharacter = other.gameObject.GetComponent<Character>();
+            float currentMultiplier = 1f;
             
             // If the same elements then only do base damage.
-            if (characterElement == player.characterElement)
+            if (characterElement == enemyCharacter.characterElement)
             {
-                player.hp -= baseDamage;
+                enemyCharacter.hp -= baseDamage;
+                // player.score += player.baseScore;
             }
             // TODO: Implement the damage multipliers.
             else
             {
-                player.hp -= baseDamage * fireDamageMultiplier;
+                enemyCharacter.hp -= baseDamage * fireDamageMultiplier;
+                currentMultiplier = fireDamageMultiplier;
             }
             
             Destroy(gameObject);
+            
+            // Add points to player if needed.
+            if (enemyCharacter.hp < 0)
+            {
+                Player player = GameObject.FindWithTag("Player").GetComponent<Player>();
+                player.score += Mathf.RoundToInt(player.baseScore * currentMultiplier);
+            }
         }
     }
 }

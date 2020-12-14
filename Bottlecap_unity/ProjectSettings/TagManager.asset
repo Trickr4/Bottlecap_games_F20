@@ -7,6 +7,9 @@ TagManager:
   - Enemy
   - Projectile
   - CMCamera
+  - HealthUI
+  - ScoreUI
+  - PlayerUIManager
   layers:
   - Default
   - TransparentFX

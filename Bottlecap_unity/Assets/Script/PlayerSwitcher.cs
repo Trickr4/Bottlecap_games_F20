@@ -12,13 +12,13 @@ public class PlayerSwitcher : MonoBehaviour
     private GameObject _currentGameObject;
     private Player _currentPlayer;
     private Animator _animator;
-    
+
     void Start()
     {
         _currentGameObject = GameObject.FindWithTag("Player");
         _currentPlayer = _currentGameObject.GetComponent<Player>();
         _animator = _currentGameObject.transform.Find("Parts").GetComponent<Animator>();
-
+        
     }
 
     void Update()
@@ -38,6 +38,8 @@ public class PlayerSwitcher : MonoBehaviour
         {
             SwitchPlayer(Enums.ELEMENT_TYPES.Nature);
         }
+        
+        Debug.Log(_currentGameObject.GetComponent<Player>().hp);
     }
 
     void SwitchPlayer(Enums.ELEMENT_TYPES keyElement)
@@ -48,11 +50,15 @@ public class PlayerSwitcher : MonoBehaviour
 
             Vector3 oldObjectVector3 = _currentGameObject.transform.position;
             Quaternion oldObjectQuaternion = _currentGameObject.transform.rotation;
+            float oldHp = _currentPlayer.hp;
+            int oldScore = _currentPlayer.score;
             Destroy(_currentGameObject);
 
             _currentGameObject = Instantiate(SelectPrefab(keyElement), oldObjectVector3, oldObjectQuaternion);
             _currentPlayer = _currentGameObject.GetComponent<Player>();
+            GameObject.FindWithTag("PlayerUIManager").GetComponent<PlayerUI>().player = _currentPlayer;
             _animator = _currentGameObject.transform.Find("Parts").GetComponent<Animator>();
+            
             _animator.Play("ExitTransform", 0, 0f);
 
             
@@ -61,6 +67,9 @@ public class PlayerSwitcher : MonoBehaviour
             CinemachineVirtualCamera cinemachineVirtualCamera = cmGameObject.GetComponent<CinemachineVirtualCamera>();
             cinemachineVirtualCamera.Follow = _currentGameObject.transform;
             cinemachineVirtualCamera.LookAt = _currentGameObject.transform;
+            
+            _currentPlayer.hp = oldHp;
+            _currentPlayer.score = oldScore;
         }
     }
 
